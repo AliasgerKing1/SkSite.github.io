@@ -1,5 +1,4 @@
-<div *ngIf="_auth.isLoggedIn()">
- <!--sidebar wrapper -->
+  <!--sidebar wrapper -->
   <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
       <div>
@@ -388,11 +387,9 @@
         </ul>
       </li>
       <li>
-        <a routerLink="#">
-        <div class="parent-icon"><i class="bx bx-user-circle"></i></div>
-        <div class="menu-title">
-            User Profile
-          </div>
+        <a href="user-profile.html">
+          <div class="parent-icon"><i class="bx bx-user-circle"></i></div>
+          <div class="menu-title">User Profile</div>
         </a>
       </li>
       <li>
@@ -1018,7 +1015,7 @@
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
             <li>
-              <a class="dropdown-item"routerLink="/profile"
+              <a class="dropdown-item" href="javascript:;"
                 ><i class="bx bx-user"></i><span>Profile</span></a
               >
             </li>
@@ -1046,8 +1043,8 @@
               <div class="dropdown-divider mb-0"></div>
             </li>
             <li>
-              <a class="dropdown-item"
-                ><i class="bx bx-log-out-circle" style="cursor: pointer;"></i><span (click)="_auth.Logout()"  style="cursor: pointer;">Logout</span></a
+              <a class="dropdown-item" href="javascript:;"
+                ><i class="bx bx-log-out-circle"></i><span>Logout</span></a
               >
             </li>
           </ul>
@@ -1056,6 +1053,3 @@
     </div>
   </header>
   <!--end header -->
-
-</div>
-

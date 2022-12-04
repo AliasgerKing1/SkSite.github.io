@@ -308,7 +308,8 @@ select:disabled {
 	-webkit-appearance: button
 }
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
-	cursor: pointer
+	cursor: pointer;
+  color: #fff;
 }
 ::-moz-focus-inner {
 	padding: 0;
@@ -2607,6 +2608,7 @@ textarea.form-control-lg {
 	--bs-btn-disabled-border-color: #dc3545
 }
 .btn-light {
+  color: #000;
 	--bs-btn-color: #000;
 	--bs-btn-bg: #f8f9fa;
 	--bs-btn-border-color: #f8f9fa;
@@ -7342,7 +7344,8 @@ textarea.form-control-lg {
 	border-radius: var(--bs-border-radius-xl)!important
 }
 .rounded-5 {
-	border-radius: var(--bs-border-radius-2xl)!important
+  border-right: none !important;
+	border-radius: var(--bs-border-radius-2xl);
 }
 .rounded-circle {
 	border-radius: 50%!important
@@ -9899,3 +9902,7 @@ textarea.form-control-lg {
 	}
 }
 /*# sourceMappingURL=bootstrap.min.css.map */
+
+.m-hover:hover {
+color : #fff !important;
+}

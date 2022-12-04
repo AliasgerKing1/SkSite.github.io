@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EmailComponent } from './pages/email/email.component';
 import { IndexComponent } from './pages/index/index.component';
 import { LoginComponent } from './pages/login/login.component';
-import { SignupComponent } from './pages/signup/signup.component';
 import { UserComponent } from './user.component';
+
+import { AuthGuard } from './guards/auth.guard';
+import { AntiauthGuard } from './guards/antiauth.guard';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -13,14 +17,22 @@ const routes: Routes = [
       {
         path: '',
         component: IndexComponent,
+        canActivate: [AntiauthGuard],
       },
       {
-        path: 'signup',
-        component: SignupComponent,
+        path: 'profile',
+        component: ProfileComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'email',
+        component: EmailComponent,
+        canActivate: [AuthGuard],
       },
       {
         path: 'login',
         component: LoginComponent,
+        canActivate: [AntiauthGuard],
       },
     ],
   },
