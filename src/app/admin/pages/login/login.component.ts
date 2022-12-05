@@ -9,42 +9,39 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  LoginForm: FormGroup;
+  AdminLoginForm: FormGroup;
   CheckForm = false;
-
   errMsg = '';
   constructor(
     private _fb: FormBuilder,
-    private _router: Router,
-    private _auth: AuthService
+    private _auth: AuthService,
+    private _router: Router
   ) {
-    this.LoginForm = this._fb.group({
-      email: ['', Validators.required, Validators.email],
+    this.AdminLoginForm = this._fb.group({
+      username: ['', Validators.required],
       password: ['', Validators.required],
-      remember: [''],
     });
   }
 
-  save() {
-    if (this.LoginForm.invalid) {
+  submit() {
+    if (this.AdminLoginForm.invalid) {
       this.CheckForm = true;
       return;
     }
-
-    this._auth.doLogin(this.LoginForm.value).subscribe((result) => {
-      console.log(result);
+    this._auth.doLogin(this.AdminLoginForm.value).subscribe((result) => {
       if (result.success) {
-        localStorage.setItem('token', result.token);
-        this._router.navigate(['/email']);
+        localStorage.setItem('admin_token', result.token);
+        this._router.navigate(['/admin/dashboard']);
       } else {
         if (result.errType == 1) {
-          this.errMsg = 'This email/Username is not Registered !';
+          this.errMsg = 'this Username or Password is Inorrect !';
         }
         if (result.errType == 2) {
-          this.errMsg = 'This password is Incorrect !';
+          this.errMsg = 'thisPassword is Inorrect !';
         }
       }
     });
   }
+
   ngOnInit(): void {}
 }

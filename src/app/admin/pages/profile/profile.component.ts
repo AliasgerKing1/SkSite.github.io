@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/services/user.service';
+import { AdminService } from '../../services/admin.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,10 +7,10 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-  allUser: any = [];
-  constructor(private _user: UserService) {
-    this._user.GetUser().subscribe((result) => {
-      this.allUser = result;
+  Admin: any = [];
+  constructor(private _admin: AdminService) {
+    this._admin.GetAdmin().subscribe((result) => {
+      this.Admin = result;
     });
   }
 

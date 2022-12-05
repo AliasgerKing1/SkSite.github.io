@@ -1,0 +1,72 @@
+<div class="bg-gradient-danger">
+  <!-- wrapper -->
+  <div class="wrapper">
+    <div
+      class="authentication-lock-screen d-flex align-items-center justify-content-center"
+    >
+      <div class="card shadow-none bg-transparent" style="border: none">
+        <div class="card-body p-md-5 text-center">
+          <h2 class="text-white">10:53 AM</h2>
+          <h5 class="text-white">Tuesday, January 14, 2021</h5>
+          <div class="">
+            <img
+              src="assets/images/icons/user.png"
+              class="mt-5"
+              width="120"
+              alt=""
+            />
+          </div>
+          <p class="mt-2 text-white">Administrator</p>
+          <form [formGroup]="AdminLoginForm">
+            <div class="mb-3 mt-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Username"
+                formControlName="username"
+                [ngClass]="{
+                  'is-invalid':
+                    AdminLoginForm.controls['username'].errors && CheckForm
+                }"
+              />
+              <small
+                class="text-warning"
+                *ngIf="AdminLoginForm.controls['username'].errors && CheckForm"
+                >Insert Your Username</small
+              >
+            </div>
+            <div class="mb-3 mt-3">
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                formControlName="password"
+                [ngClass]="{
+                  'is-invalid':
+                    AdminLoginForm.controls['password'].errors && CheckForm
+                }"
+              />
+              <small
+                class="text-warning"
+                *ngIf="AdminLoginForm.controls['password'].errors && CheckForm"
+              >
+                Insert Your Password</small
+              >
+            </div>
+            <small class="text-warning">{{ errMsg }}</small>
+          </form>
+          <div class="d-grid">
+            <button
+              type="submit"
+              class="btn btn-white text-dark"
+              (click)="submit()"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end wrapper -->
+</div>
