@@ -1,0 +1,3 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+09:14:56	3725/3725	---MC-	424	error ('Failed%20Dependency')	text/html	date:Tue,%2006%20Dec%202022%2003:44:56%20GMT	http://hotflix.volkovdesign.com/robots.txt		(from )
+09:14:57	3725/3725	---MC-	424	error ('Failed%20Dependency')	text/html	date:Tue,%2006%20Dec%202022%2003:44:56%20GMT	http://hotflix.volkovdesign.com/	C:/My%20Web%20Sites/hotflix/hotflix.volkovdesign.com/index.html	(from )

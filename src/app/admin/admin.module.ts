@@ -9,6 +9,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { AddProductComponent } from './pages/add-product/add-product.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { OrdersComponent } from './pages/orders/orders.component';
+import { ProductlistComponent } from './pages/productlist/productlist.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     AddProductComponent,
     LoginComponent,
     ProfileComponent,
+    OrdersComponent,
+    ProductlistComponent,
   ],
   imports: [CommonModule, AdminRoutingModule, ReactiveFormsModule],
 })

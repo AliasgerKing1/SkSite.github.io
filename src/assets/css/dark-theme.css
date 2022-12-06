@@ -648,7 +648,7 @@ html.dark-theme .ff_fileupload_wrap .ff_fileupload_dropzone {
 }
 html.dark-theme .imageuploadify {
 	background-color: rgb(255 255 255 / 14%);
-	border: 2px dashed rgb(255 255 255 / .5)
+	border: 2px dashed rgb(255 255 255 / .5);
 }
 html.dark-theme .bootstrap-tagsinput {
 	background-color: #2b3035;

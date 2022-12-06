@@ -996,8 +996,8 @@
             class="user-img"
             alt="user avatar"
           />
-          <div class="user-info ps-3" *ngFor="let a of Admin">
-            <p class="user-name mb-0">{{ a.name }}</p>
+          <div class="user-info ps-3">
+            <p class="user-name mb-0">john</p>
             <p class="designattion mb-0">Web Designer</p>
           </div>
         </a>
@@ -1054,7 +1054,9 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0 p-0">
               <li class="breadcrumb-item">
-                <a routerLink="/email"><i class="bx bx-home-alt"></i></a>
+                <a routerLink="/admin/dashboard"
+                  ><i class="bx bx-home-alt"></i
+                ></a>
               </li>
               <li class="breadcrumb-item active" aria-current="page">
                 Admin Profile
@@ -1308,7 +1310,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-9 text-secondary">
                       <input
-                        type="button"
+                        type="submit"
                         class="btn btn-primary px-4"
                         value="Save Changes"
                       />
