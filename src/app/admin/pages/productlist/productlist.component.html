@@ -1124,21 +1124,28 @@
               >
             </div>
           </div>
-          <div class="table-responsive">
-            <table class="table mb-0">
-              <thead class="table-light">
-                <tr>
-                  <th>Order#</th>
-                  <th>Company Name</th>
-                  <th>Status</th>
-                  <th>Total</th>
-                  <th>Date</th>
-                  <th>View Details</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
+          <div
+            class="alert alert-danger"
+            *ngIf="allProductList == 0; else dataFound"
+          >
+            No Data Found
+          </div>
+          <ng-template #dataFound>
+            <div class="table-responsive">
+              <table class="table mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <th>Order#</th>
+                    <th>Company Name</th>
+                    <th>Status</th>
+                    <th>Total</th>
+                    <th>Date</th>
+                    <th>View Details</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- <tr>
                   <td>
                     <div class="d-flex align-items-center">
                       <div>
@@ -1182,8 +1189,8 @@
                       ></a>
                     </div>
                   </td>
-                </tr>
-                <tr>
+                </tr> -->
+                  <!-- <tr>
                   <td>
                     <div class="d-flex align-items-center">
                       <div>
@@ -1590,10 +1597,11 @@
                       ></a>
                     </div>
                   </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+                </tr> -->
+                </tbody>
+              </table>
+            </div>
+          </ng-template>
         </div>
       </div>
     </div>
