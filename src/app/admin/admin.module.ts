@@ -11,6 +11,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { ProductlistComponent } from './pages/productlist/productlist.component';
+import { ProductDetailsListComponent } from './pages/product-details-list/product-details-list.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ProductlistComponent } from './pages/productlist/productlist.component'
     ProfileComponent,
     OrdersComponent,
     ProductlistComponent,
+    ProductDetailsListComponent,
   ],
   imports: [CommonModule, AdminRoutingModule, ReactiveFormsModule],
 })

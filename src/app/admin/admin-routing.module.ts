@@ -7,6 +7,7 @@ import { AddProductComponent } from './pages/add-product/add-product.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { OrdersComponent } from './pages/orders/orders.component';
+import { ProductDetailsListComponent } from './pages/product-details-list/product-details-list.component';
 import { ProductlistComponent } from './pages/productlist/productlist.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 
@@ -44,6 +45,11 @@ const routes: Routes = [
   {
     path: 'product/list',
     component: ProductlistComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'product/details',
+    component: ProductDetailsListComponent,
     canActivate: [AuthGuard],
   },
 ];
