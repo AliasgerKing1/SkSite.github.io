@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { timer } from 'rxjs';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductlistComponent implements OnInit {
   allProduct: any = [];
   productName: any;
+  NewDate = Date.now();
   constructor(private _pro: ProductService) {
     this._pro.GetProduct().subscribe((result) => {
       this.allProduct = result;
@@ -29,5 +31,9 @@ export class ProductlistComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    timer(0, 1000).subscribe(()=> {
+      this.NewDate = Date.now();
+    })
+  }
 }

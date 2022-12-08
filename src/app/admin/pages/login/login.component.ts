@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { timer } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -12,6 +13,8 @@ export class LoginComponent implements OnInit {
   AdminLoginForm: FormGroup;
   CheckForm = false;
   errMsg = '';
+
+  newDate = Date.now();
   constructor(
     private _fb: FormBuilder,
     private _auth: AuthService,
@@ -43,5 +46,9 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    timer(0, 1000).subscribe(()=> {
+      this.newDate = Date.now();
+    })
+  }
 }
