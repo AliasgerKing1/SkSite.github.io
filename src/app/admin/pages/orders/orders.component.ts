@@ -16,19 +16,5 @@ export class OrdersComponent implements OnInit {
     });
   }
 
-  askDelete(obj: any) {
-    this.orderName = obj;
-  }
-
-  ConfirmDelete(btn: any) {
-    this._pro.DeleteProduct(this.orderName).subscribe((result) => {
-      if (result.success == true) {
-        let n = this.allOrders.indexOf(this.orderName);
-        this.allOrders.splice(n, 1);
-        btn.click();
-      }
-    });
-  }
-
   ngOnInit(): void {}
 }

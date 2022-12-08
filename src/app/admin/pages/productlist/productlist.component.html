@@ -1120,13 +1120,14 @@
               <a
                 href="javascript:;"
                 class="btn btn-primary radius-30 mt-2 mt-lg-0"
-                ><i class="bx bxs-plus-square"></i>Add New Order</a
+                ><i class="bx bxs-trash pb-1" style="font-size: 19px"></i
+                >Delete</a
               >
             </div>
           </div>
           <div
             class="alert alert-danger"
-            *ngIf="allProductList == 0; else dataFound"
+            *ngIf="allProduct == 0; else dataFound"
           >
             No Data Found
           </div>
@@ -1145,6 +1146,105 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <tr *ngFor="let p of allProduct">
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div>
+                          <input
+                            class="form-check-input me-3"
+                            type="checkbox"
+                            value=""
+                            aria-label="..."
+                          />
+                        </div>
+                        <div class="ms-2">
+                          <h6 class="mb-0 font-14">#OS-000354</h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td>{{ p.title }}</td>
+                    <td>
+                      <div
+                        class="badge rounded-pill text-success bg-light-success p-2 text-uppercase px-3"
+                      >
+                        <i class="bx bxs-circle me-1"></i>FulFilled
+                      </div>
+                    </td>
+                    <td>&#x20b9;{{ p.price }}</td>
+                    <td>June 10, 2020</td>
+                    <td>
+                      <button
+                        type="button"
+                        class="btn btn-primary btn-sm radius-30 px-4"
+                      >
+                        View Details
+                      </button>
+                    </td>
+                    <td>
+                      <div class="d-flex order-actions">
+                        <a routerLink="add-product/edit/{{ p._id }}" class=""
+                          ><i class="bx bxs-edit"></i
+                        ></a>
+                        <a
+                          href="javascript:;"
+                          class="ms-3"
+                          data-bs-toggle="modal"
+                          data-bs-target="#delete"
+                          (click)="askDelete(p)"
+                          ><i class="bx bxs-trash"></i
+                        ></a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Modal -->
+                  <div
+                    class="modal fade"
+                    id="delete"
+                    tabindex="-1"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                      <div class="modal-content bg-danger">
+                        <div class="modal-header">
+                          <h5 class="modal-title text-white">
+                            Delete Category
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body text-white">
+                          <p>
+                            Are you sure you want to delete
+                            <b *ngIf="productName">{{ productName.title }}</b>
+                          </p>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-light text-dark"
+                            #closeBtn
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-dark"
+                            (click)="ConfirmDelete(closeBtn)"
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- <tr>
                   <!-- <tr>
                   <td>
                     <div class="d-flex align-items-center">
@@ -1616,7 +1716,7 @@
   ></a>
   <!--End Back To Top Button-->
   <footer class="page-footer">
-    <p class="mb-0">Copyright © 2021. All right reserved.</p>
+    <p class="mb-0">Copyright © 2022. All right reserved.</p>
   </footer>
 </div>
 <!--end wrapper-->

@@ -14,6 +14,13 @@ export class ProductService {
     return this._http.get<any>(this.apiURL);
   }
   DeleteProduct(id: any) {
-    return this._http.delete<any>(this.apiURL + id._id);
+    return this._http.delete<any>(this.apiURL + id);
+  }
+  GetProductById(id: any) {
+    return this._http.get<any>(this.apiURL + id);
+  }
+
+  UpdateProduct(id: any, obj: any) {
+    return this._http.put<any>(this.apiURL + id, obj);
   }
 }
